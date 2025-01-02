@@ -92,7 +92,7 @@ void AddSeqList(SeqList *list, int index, int val) {
     }
 }
 
-void main() {
+int main() {
     SeqList seqList;
     InitSeqList(&seqList);
     for (int i = 0; i < seqList.maxSize; ++i) {
@@ -104,4 +104,5 @@ void main() {
         printf("%d ", seqList.data[i]);
     }
     printf("\n");
+    return -1;
 }
