@@ -38,7 +38,7 @@ int main() {
         printf("%d\n", score[i]);
     }
     char str[6] = "hello";
-    printf("str[6] = %s, length = %llu\n", str, sizeof(str) / sizeof(str[0]));
+    printf("str[6] = %s, length = %lu\n", str, sizeof(str) / sizeof(str[0]));
 
     /*
      * ------------------结构体------------------
