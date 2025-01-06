@@ -95,14 +95,33 @@ void AddSeqList(SeqList *list, int index, int val) {
 int main() {
     SeqList seqList;
     InitSeqList(&seqList);
-    for (int i = 0; i < seqList.maxSize; ++i) {
-        printf("%d ", seqList.data[i]);
-    }
-    printf("扩容10单位 \n");
-    IncreaseSeqSize(&seqList, 10);
+    
+    // 打印初始化后的顺序表
+    printf("初始化后的顺序表:\n");
     for (int i = 0; i < seqList.maxSize; ++i) {
         printf("%d ", seqList.data[i]);
     }
     printf("\n");
-    return -1;
+    
+    // 扩容操作
+    int increaseSize = 10;
+    printf("扩容%d单位后的顺序表:\n", increaseSize);
+    IncreaseSeqSize(&seqList, increaseSize);
+    for (int i = 0; i < seqList.maxSize; ++i) {
+        printf("%d ", seqList.data[i]);
+    }
+    printf("\n");
+    
+    // 插入数据
+    int insertPos = 10, insertVal = 100;
+    printf("在位置%d插入数据%d后的顺序表:\n", insertPos, insertVal);
+    AddSeqList(&seqList, insertPos, insertVal);
+    for (int i = 0; i < seqList.maxSize; ++i) {
+        printf("%d ", seqList.data[i]);
+    }
+    printf("\n");
+    
+    // 释放内存
+    free(seqList.data);
+    return 0;
 }
